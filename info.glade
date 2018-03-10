@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.20.0 -->
+<interface>
+	<requires lib="gtk+" version="3.20"/>
+	<object class="GtkWindow" id="window">
+		<property name="can_focus">False</property>
+		<child>
+			<object class="GtkBox" id="box">
+				<property name="visible">True</property>
+				<property name="can_focus">False</property>
+				<property name="orientation">vertical</property>
+				<child>
+					<object class="GtkBox" id="mapbox">
+					<property name="width_request">600</property>
+					<property name="height_request">600</property>
+					<property name="visible">True</property>
+					<property name="can_focus">False</property>
+					<property name="orientation">vertical</property>
+					<property name="hexpand">True</property>
+					<property name="vexpand">True</property>
+					<child>
+						<placeholder/>
+					</child>
+				</object>
+				<packing>
+						<property name="expand">False</property>
+						<property name="fill">True</property>
+						<property name="position">0</property>
+				</packing>
+				</child>
+				<child>
+					<object class="GtkBox">
+						<property name="visible">True</property>
+						<property name="can_focus">False</property>
+						<child>
+							<object class="GtkEntry" id="lat">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">0</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkEntry" id="lng">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">1</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkEntry" id="course">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">2</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkEntry" id="speed">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">3</property>
+							</packing>
+						</child>
+					</object>
+					<packing>
+						<property name="expand">False</property>
+						<property name="fill">True</property>
+						<property name="position">1</property>
+					</packing>
+				</child>
+				<child>
+					<object class="GtkBox">
+						<property name="visible">True</property>
+						<property name="can_focus">False</property>
+						<child>
+							<object class="GtkLabel" id="ftp">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="label" translatable="yes">WayPoint</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">0</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkEntry" id="wplat">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">1</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkEntry" id="wplng">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">2</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkEntry" id="dtg">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">3</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkEntry" id="heading">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">4</property>
+							</packing>
+						</child>
+					</object>
+					<packing>
+						<property name="expand">False</property>
+						<property name="fill">True</property>
+						<property name="position">2</property>
+					</packing>
+				</child>
+			</object>
+		</child>
+	</object>
+</interface>
+
+
+

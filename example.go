@@ -35,7 +35,7 @@ func main() {
 	dtg, _ := builder.GetObject("dtg")
 	heading, _ := builder.GetObject("heading")
 
-	wp = geo.Position{45, -76}
+	wp = geo.Position{44.88, -75.40}
 	ownship = geo.Track{geo.Fix{geo.Position{44.80, -75.20}, time.Now()}, 0, 250}
 	lat.(*gtk.Entry).SetText(fmt.Sprintf("%4.2f", ownship.Lat))
 	lng.(*gtk.Entry).SetText(fmt.Sprintf("%4.2f", ownship.Lng))
@@ -65,7 +65,6 @@ func main() {
 		for {
 			_ = <-tick2.C
 			//check course
-			fmt.Println("cource bearing", ownship.Crs, bearing)
 			if ownship.Crs > bearing {
 				if ownship.Crs-bearing < 180 {
 					ownship.Crs = ownship.Crs - 1
@@ -82,11 +81,13 @@ func main() {
 			if ownship.Crs < 0 {
 				ownship.Crs = ownship.Crs + 360
 			}
+			if ownship.Crs > 360 {
+				 ownship.Crs = ownship.Crs - 360
+ 			}
 			if math.Abs(ownship.Crs-bearing) < 1 {
 				ownship.Crs = bearing
 			}
 			_, _ = glib.IdleAdd(crs.(*gtk.Entry).SetText, fmt.Sprintf("%3.0f", ownship.Crs))
-			fmt.Println("update crs ", ownship.Crs, bearing)
 
 			//deadreckon
 			ownship.DeadReckon()
@@ -113,6 +114,7 @@ func main() {
 	go func() {
 		for {
 			_ = <-tick3.C
+			fmt.Println("tick3")
 			m.GpsAdd(ownship.Lat, ownship.Lng, ownship.Crs)
 		}
 	}()

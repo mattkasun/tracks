@@ -102,7 +102,7 @@ func main() {
 	if err != nil {
 		fmt.Println("error creating map")
 	}
-	err = m.SetProperty("map-source", gtkmap.SourceVirtualEarthHybrid)
+	err = m.SetProperty("map-source", gtkmap.SourceGoogleHybrid)
 	if err != nil {
 		fmt.Println("failed to set source", err)
 	}
@@ -113,9 +113,10 @@ func main() {
 
 	go func() {
 		for {
-			_ = <-tick3.C
+			<-tick3.C
+			//time.Sleep(time.Second * 10)
 			fmt.Println("tick3")
-			m.GpsAdd(ownship.Lat, ownship.Lng, ownship.Crs)
+			_,_ = glib.IdleAdd(m.GpsAdd, ownship.Lat, ownship.Lng, ownship.Crs)
 		}
 	}()
 
